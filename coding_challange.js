@@ -10,13 +10,14 @@ return mass/height**2}; //** = sqr
 
 const BMIv2=(mass, height) => mass/height**2;  //funkcja w wersji arrow function
 
-		
+console.log("*** CHALLANGE 1 ***");		
 console.log(`Mark BMI is ${BMI(Mark_mass, Mark_height)}`); // tu jest tylda`
 console.log(BMI(John_mass, John_height));
 console.log(BMIv2(Mark_mass, Mark_height));
 console.log(BMIv2(John_mass, John_height));
 
 // ******** challange 2 *********** 
+console.log("*** CHALLANGE 2 ***");		
 		
 if(BMIv2(Mark_mass,Mark_height)>BMIv2(John_mass,John_height)) 
 			console.log("Mark's BMI is higher than John's")
@@ -24,6 +25,7 @@ if(BMIv2(Mark_mass,Mark_height)>BMIv2(John_mass,John_height))
 
 
 // ********* challange 3 *************************
+console.log("*** CHALLANGE 3 ***");		
 
 const DolphinsResults = [196, 108, 89];    //[196, 108, 89];
 const KoalsResults = [88, 91, 110];		 // [88, 91, 110];
@@ -49,6 +51,7 @@ if (avg_D===avg_K && avg_D>100) {console.log("Draw")} else
 
 
 // ************ challange 4 ****************************
+console.log("*** CHALLANGE 4 ***");		
 
 const bill = 275;
 let tip;
@@ -60,7 +63,57 @@ switch (true) {
 						break;};
 	case (bill>300) : {tip=0.20*bill;
 						break;};	
+	default: break;
 }
 
 console.log(`Tip is ${(tip)}`);						
 	
+// ************ ARRAYS METHODS ****************************
+console.log("*** ARRAY METHODS ***");	
+
+const friends = ['Kamil', 'Kuba', 'Wojo'];
+friends.push('Tomek');  //push dodoawanie nastepnego elementu do tablicy
+console.log(friends);
+const lenght = friends.push('Romek'); //zwraca ile jest elementow i dodaje Romka na koncu
+friends.unshift('Bolek'); // dodaje na poczatku
+console.log(friends);
+console.log(lenght);
+friends.pop(); // kasuje ostatni
+console.log(friends);
+console.log("Skasowalem: "+friends.pop()); // podaje co skasowal
+friends.shift(); // kasuje pierwszy
+console.log(friends);
+console.log(friends.indexOf('Kamil'));  //pokazuje na jakiej jest pozycji
+console.log(friends.includes('Kuba'));  // true or false jesli element jest w tablicy
+
+
+
+// ******** Part 2 Challange 2 ******************************
+console.log("*** PART 2 CHALLANGE 2 ***");		
+
+const bills = [275, 60, 15, 600];
+let tips = [0,0,0,0];
+let Tip;
+
+function CalcTip(bill) {
+switch (true) {
+	case(bill>=50 && bill<=300): {Tip=0.15*bill;
+						break;};
+	case (bill>300) : {Tip=0.20*bill;
+						break;};	
+	default: break;
+}
+return Tip;
+}
+
+// wersja skrócona CalcTip
+const CalcTipv2 = function(bill) {						    // jesli bill >50 i <300 to bill*0.15 jesli nie to bill*0.2
+return bill>=50 && bill<=300 ? bill*0.15 : bill *0.2;}
+
+
+for (i=0; i<4; i++)
+{ tips[i] = CalcTipv2(bills[i]);
+}
+console.log(tips);
+
+
